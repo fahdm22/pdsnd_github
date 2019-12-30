@@ -30,7 +30,7 @@ def get_filters():
     # Gets user input for month (all, january, february, ... , june)
     while True:
         month = input("Would you like to filter the data by month of not all? \n Please choose january, february,.., june. \n For no month filter, choose all:  ")
-        if month.title() not in ['All', 'January','February','March','April','May','June']:
+        if month.lower() not in ['all', 'january','february','march','april','may','june']:
             print("Sorry, please input all, January, February, March, April, May, or June\n\n")
             continue
         else:
@@ -44,7 +44,7 @@ def get_filters():
     # Gets user input for day of week (all, monday, tuesday, ... sunday)
     while True:
         day = input("Would you like to filter the data by day of not all? \n Please choose monday, tuesday,.., sunday. \n For no day filter, choose all:   ")
-        if day.title() not in ['All', 'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']:
+        if day.lower() not in ['all', 'monday','tuesday','wednesday','thursday','friday','saturday','sunday']:
 
             print("Sorry, please input all, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday or Sunday\n\n")
             continue
@@ -134,13 +134,33 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
+<<<<<<< HEAD
     # Displays most commonly used start station
     most_used_start_station = df['Start Station'].value_counts().idxmax()
     print('Most common used start station:', most_used_start_station)
+||||||| 7b4d632
+    # TO DO: display most commonly used start station
+    most_used_start_station = df['Start Station'].value_counts().idxmax()
+    print('Most common used start station:', most_used_start_station)
+=======
+    # TO DO: display most commonly used start station
 
+    print('Most common used start station:', df['Start Station'].value_counts().idxmax())
+>>>>>>> refactoring
+
+<<<<<<< HEAD
     # Displays most commonly used end station
     most_used_end_station = df['End Station'].value_counts().idxmax()
     print('Most common used end station:', most_used_end_station)
+||||||| 7b4d632
+    # TO DO: display most commonly used end station
+    most_used_end_station = df['End Station'].value_counts().idxmax()
+    print('Most common used end station:', most_used_end_station)
+=======
+    # TO DO: display most commonly used end station
+    
+    print('Most common used end station:', df['End Station'].value_counts().idxmax())
+>>>>>>> refactoring
 
 
     # Displays most frequent combination of start station and end station trip
